@@ -5,21 +5,6 @@ import Navbar from './components/Navbar/Navbar';
 import Search from './components/Search/Search';
 
 function App() {
-  const express = require("express");
-  const path = require("path");
-
-  const app = express();
-
-  app.use(express.static(path.join(__dirname, "build")));
-
-  app.use((req, res) => {
-    res.sendFile(path.join(__dirname, "build", "index.html"));
-  });
-
-  app.listen(process.env.PORT || 3000, () => {
-    console.log("Server Started");
-  });
-
   let [characters, updateCharacters] = useState([]);
   let [pageNumber, updatePageNumber] = useState(1);
   let [characterSearch, updateCharacterSearch] = useState('');
